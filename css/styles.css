@@ -1,0 +1,19 @@
+:root {
+  --primary-color: #f7b58c; /*yellow*/
+  --secondary-color: #84739c; /*purple*/
+  --terciary-color: #ffefff; /*white-ish*/
+  --quatenary-color: #181010; /*black-ish*/
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+ font-family: 'Poppins', sans-serif;
+ font-weight: 400;
+ font-size: 16px;
+ line-height: 1.6;
+ text-align: center;
+}
