@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #f7b58c; /*yellow*/
-  --secondary-color: #84739c; /*purple*/
-  --terciary-color: #ffefff; /*white-ish*/
-  --quatenary-color: #181010; /*black-ish*/
+  --pokeyellow: #EBD000; /*yellow*/
+  --pokeblue: #2E5CB5; /*blue*/
+  --pokered: #FE0000; /*red*/
+  --pokeblack: #181010; /*black-ish*/
 }
 
 * {
@@ -18,6 +18,24 @@ body {
  text-align: center;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h1 {
+  color: var(--pokered);
+  margin: 10px;
+}
+
+p::first-letter {
+  text-transform: uppercase;
+}
+
+.button-class::first-letter {
+  text-transform: uppercase;
+}
+
 .button-class {
   /* overwrites browser defaults and resets the border */
   border: none;
@@ -25,18 +43,18 @@ body {
   /* takes the font from the outer container */
   font-family: inherit;
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: dark-grey;
-  color: black;
+  background-color: var(--pokeblue);
+  color: var(--pokeyellow);
   text-decoration: none;
   /*adds spacing to the button (this will be discussed more in-depth later) */
   padding: 10px;
   margin: 10px;
   border-radius: 3px;
+  width: 130px;
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(254, 0, 0, 0.5);
   transition-duration: 0.9s;
   transition-property: opacity;
-  list-style-type: none;
   cursor: pointer;
 }
 
@@ -65,28 +83,48 @@ body {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
-  background: #fff;
+  background: var(--pokeblue);
   padding: 15px;
   width: 100%;
   max-width: 700px;
-  text-align: left;
+  border-radius: 9px;
+  border: 9px solid rgba(254, 0, 0);
+  color: var(--pokeyellow);
 }
 
 .modal-close {
+  display: block;
   float: right;
   -webkit-appearance: none;
   border: 0;
   background: none;
-  color: #777;
+  color: var(--pokered);
   text-decoration: underline;
 }
 
+.modal-img {
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .modal h1 {
-  margin-top: 0;
+  text-align: center;
+  display: block;
+}
+
+.modal h1::first-letter{
+  text-transform: uppercase;
 }
 
 .modal p {
   margin-bottom: 0;
+  text-align: center;
+}
+
+.modal p::first-letter{
+  text-transform: uppercase;
 }
 
 #modal-container {

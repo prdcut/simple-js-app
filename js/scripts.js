@@ -41,7 +41,6 @@ let pokemonRepository = (function () {
             detailsUrl: item.url
           };
           add(pokemon);
-          console.log(pokemon);
         });
       }).catch(function (e) {
         console.error(e);
@@ -56,6 +55,10 @@ let pokemonRepository = (function () {
         // Now we add the details to the item
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
+        item.abilities = [];
+        details.abilities.forEach(function (pokemonType) {
+          item.abilities.push(pokemonType.ability.name);
+        });
         item.types = [];
         details.types.forEach(function (pokemonType) {
           item.types.push(pokemonType.type.name);
@@ -67,8 +70,7 @@ let pokemonRepository = (function () {
 
     function showDetails(item) {
       pokemonRepository.loadDetails(item).then(function () {
-        console.log(pokemonList);
-        showModal(pokemonList);
+        showModal(item);
       });
     };
 
@@ -143,9 +145,9 @@ let pokemonRepository = (function () {
   };
 })();
 
-
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
+
   });
 });
