@@ -112,6 +112,7 @@ p::first-letter {
 .modal h1 {
   text-align: center;
   display: block;
+  color: var(--pokeyellow);
 }
 
 .modal h1::first-letter{
