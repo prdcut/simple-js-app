@@ -1,20 +1,69 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
     <title>My Pokedex</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
-  <body>
-    <h1>Pokedex</h1>
-    <ul class='pokemon-list'></ul>
-    <button id="show-modal"></button>
-    <div id="modal-container"></div>
+  <body class="d-flex flex-column">
+  <!-- Modal -->
+    <div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="pokemonModal" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-cenered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pokemonModalTitle"></h5>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="page-header mb-3">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+        <div class="container-fluid d-flex align-items-center">
+          <div class="col-12 col-md-3 d-flex justify-content-center justify-content-md-start">
+            <a class="nav-logo navbar-brand m-0 m-md-1 font-weight-bold fs-1" href="#">My Pokedex</a>
+          </div>
+          <div class="col-12 col-md-9 nav-search p-3 p-md-0">
+            <form class="d-flex" >
+              <input class="search form-control me-md-2" type="search" placeholder="Type a Pokemon's name" aria-label="Search">
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+<!-- Main Section -->
+    <main class="page-main flex-grow-1">
+        <section class="pokedex">
+            <ul class="list-group list-unstyled d-flex flex-wrap p-0"></ul>
+            <button id="show-modal"></button>
+            <div id="modal-container"></div>
+        </section>
+        <section class="detail-modal-container">
+        </section>
+    </main>
+    <footer class="page-footer vw-100 d-flex justify-content-center align-items-center bg-light">
+      <a class="m-3" href="https://github.com/proudcut" target="_blank">
+        <img src="img/github.svg" alt="Github logo"/>
+      </a>
+      <a class="m-3" href="https://www.behance.net/danielffma" target="_blank">
+        <img src="img/behance.svg" alt="Behance logo"/>
+      </a>
+      <a class="m-3" href="https://www.linkedin.com/in/daniel-mayorga-a42367133/" target="_blank">
+        <img src="img/linkedin.svg" alt="Linkedin logo"/>
+      </a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
     <script src="js/scripts.js"></script>
