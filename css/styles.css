@@ -1,23 +1,11 @@
-
+h1::first-letter {
+  text-transform: uppercase;
+}
 
 p::first-letter {
   text-transform: uppercase;
 }
 
-.button-class::first-letter {
+button::first-letter {
   text-transform: uppercase;
-}
-
-.card {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: rgb(233, 230, 35);
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
 }
